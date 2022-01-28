@@ -2,7 +2,7 @@ import React from 'react';
 import '../style.css';
 import './Tasks.css';
 
-export default function Tasks({ index, task }) {
+export default function Tasks({ index, task, delTask }) {
   return (
     <main>
       <article>
@@ -10,7 +10,7 @@ export default function Tasks({ index, task }) {
         <p style={{ textDecoration: task.completed && 'line-through' }}>
           {task.text}
         </p>
-        <button>X</button>
+        <button onClick={() => delTask(index)}>X</button>
       </article>
     </main>
   );

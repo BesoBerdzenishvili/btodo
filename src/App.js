@@ -26,7 +26,12 @@ export default function App(props) {
   };
   // edit task
   // delete individual task
-  // delete all task
+  const delTask = (index) => {
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
+  };
+  // delete all task (delTasks)
   // toggle completed
   // toggle darkMode
   // toggle showAll
@@ -40,7 +45,7 @@ export default function App(props) {
         <Switch />
       </header>
       {tasks.map((task, index) => (
-        <Tasks key={index} index={index} task={task} />
+        <Tasks key={index} index={index} task={task} delTask={delTask} />
       ))}
       <Controllers tasks={tasks} />
     </div>

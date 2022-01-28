@@ -2,11 +2,11 @@ import React from 'react';
 import '../style.css';
 import './Controllers.css';
 
-export default function Controllers({tasks}) {
+export default function Controllers({ tasks, delAll }) {
   return (
     <footer>
       <div>
-        <p>{tasks.filter(task=>!task.completed).length} items left</p>
+        <p>{tasks.filter((task) => !task.completed).length} items left</p>
         <div>
           <ul>
             <li>All</li>
@@ -14,7 +14,7 @@ export default function Controllers({tasks}) {
             <li>Completed</li>
           </ul>
         </div>
-        <p>Clear completed</p>
+        <p onClick={() => delAll()}>Clear completed</p>
       </div>
       <h4>Drag and drop to rerder list(?)</h4>
     </footer>

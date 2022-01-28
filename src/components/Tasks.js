@@ -2,19 +2,35 @@ import React, { useState } from 'react';
 import '../style.css';
 import './Tasks.css';
 
-export default function Tasks({ index, task, delTask, editTask }) {
+export default function Tasks({
+  index,
+  task,
+  delTask,
+  editTask,
+  completeTask,
+}) {
   const [value, setValue] = useState('');
   const handleSubmit = (e) => {
-    console.log(value, 'Val')
+    console.log(value, 'Val');
     e.preventDefault();
     if (!value) return;
-    editTask(value);
+    editTask(value, index);
     setValue('');
   };
   return (
     <main>
       <article>
-        <button>Check</button>
+        <button onClick={() => completeTask(index)}>
+          <img
+            src={
+              task.completed
+                ? 'https://www.freeiconspng.com/uploads/black-checkmark-png-10.png'
+                : 'https://i.stack.imgur.com/yVXkk.png'
+            }
+            width="19px"
+            alt="check mark"
+          />
+        </button>
         <p style={{ textDecoration: task.completed && 'line-through' }}>
           {task.text}
         </p>

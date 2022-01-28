@@ -38,7 +38,19 @@ export default function App(props) {
     setTasks(newTasks);
   };
   // delete all task (delTasks)
+  const delAll = () => {
+    const newTasks = [...tasks];
+    const checked = newTasks.filter((i) => !i.completed);
+    setTasks(checked);
+  };
   // toggle completed
+  const completeTask = (index) => {
+    const newTasks = [...tasks];
+    newTasks[index].completed
+      ? (newTasks[index].completed = false)
+      : (newTasks[index].completed = true);
+    setTasks(newTasks);
+  };
   // toggle darkMode
   // toggle showAll
   // toggle showActives
@@ -57,9 +69,10 @@ export default function App(props) {
           task={task}
           delTask={delTask}
           editTask={editTask}
+          completeTask={completeTask}
         />
       ))}
-      <Controllers tasks={tasks} />
+      <Controllers tasks={tasks} delAll={delAll} />
     </div>
   );
 }

@@ -2,12 +2,14 @@ import React from 'react';
 import '../style.css';
 import './Tasks.css';
 
-export default function Tasks() {
+export default function Tasks({ index, task }) {
   return (
     <main>
       <article>
         <button>check</button>
-        <p>Jog around the park 3x</p>
+        <p style={{ textDecoration: task.completed && 'line-through' }}>
+          {task.text}
+        </p>
         <button>X</button>
       </article>
     </main>

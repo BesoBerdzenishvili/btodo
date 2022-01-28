@@ -19,6 +19,15 @@ export default function App(props) {
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
+  // add new task
+  // edit task
+  // delete individual task
+  // delete all task
+  // toggle completed
+  // toggle darkMode
+  // toggle showAll
+  // toggle showActives
+  // toggle showCompleted
   return (
     <div>
       <header>
@@ -29,7 +38,8 @@ export default function App(props) {
       {tasks.map((task, index) => (
         <Tasks key={index} index={index} task={task} />
       ))}
-      <Controllers />
+      <Controllers tasks={tasks} />
     </div>
   );
 }
+// See if possible to toggle darkMode, showActives, showCompleted, showActives from onClick functions

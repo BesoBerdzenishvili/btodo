@@ -2,11 +2,11 @@ import React from 'react';
 import '../style.css';
 import './Controllers.css';
 
-export default function Controllers() {
+export default function Controllers({tasks}) {
   return (
     <footer>
       <div>
-        <p>4 items left</p>
+        <p>{tasks.filter(task=>!task.completed).length} items left</p>
         <div>
           <ul>
             <li>All</li>

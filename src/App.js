@@ -20,6 +20,10 @@ export default function App(props) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
   // add new task
+  const newTask = (text) => {
+    const newTasks = [...tasks, { text, completed: false }];
+    setTasks(newTasks);
+  };
   // edit task
   // delete individual task
   // delete all task
@@ -32,7 +36,7 @@ export default function App(props) {
     <div>
       <header>
         <h1>TODO</h1>
-        <Input />
+        <Input newTask={newTask} />
         <Switch />
       </header>
       {tasks.map((task, index) => (

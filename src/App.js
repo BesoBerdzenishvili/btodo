@@ -25,6 +25,12 @@ export default function App(props) {
     setTasks(newTasks);
   };
   // edit task
+  const editTask = (value, index) => {
+    const old = [...tasks];
+    const newTasks = (old[index].text = value);
+    console.log(value, index, 'poison');
+    setTasks(newTasks);
+  };
   // delete individual task
   const delTask = (index) => {
     const newTasks = [...tasks];
@@ -45,7 +51,13 @@ export default function App(props) {
         <Switch />
       </header>
       {tasks.map((task, index) => (
-        <Tasks key={index} index={index} task={task} delTask={delTask} />
+        <Tasks
+          key={index}
+          index={index}
+          task={task}
+          delTask={delTask}
+          editTask={editTask}
+        />
       ))}
       <Controllers tasks={tasks} />
     </div>

@@ -8,6 +8,8 @@ export default function Tasks({
   delTask,
   editTask,
   completeTask,
+  show,
+  showAll
 }) {
   const [value, setValue] = useState('');
   const handleSubmit = (e) => {
@@ -19,7 +21,7 @@ export default function Tasks({
   };
   return (
     <main>
-      <article>
+      <article id={showAll ? 'show' : ''} className={(show && task.completed||(!show && !task.completed)) ? 'show' : 'hide'}>
         <button onClick={() => completeTask(index)}>
           <img
             src={

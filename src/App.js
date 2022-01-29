@@ -14,7 +14,7 @@ export default function App(props) {
     return saved ? JSON.parse(saved) : panels;
   });
   const [darkMode, setDarkMode] = useState(false);
-  const [show, setShow] = useState(tr);
+  const [show, setShow] = useState(true);
   const [showAll, setShowAll] = useState(true);
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -52,9 +52,6 @@ export default function App(props) {
     setTasks(newTasks);
   };
   // toggle darkMode
-  // toggle showAll
-  // toggle showActives
-  // toggle showCompleted
   return (
     <div>
       <header>
@@ -70,9 +67,16 @@ export default function App(props) {
           delTask={delTask}
           editTask={editTask}
           completeTask={completeTask}
+          show={show}
+          showAll={showAll}
         />
       ))}
-      <Controllers tasks={tasks} delAll={delAll} />
+      <Controllers
+        tasks={tasks}
+        delAll={delAll}
+        setShow={setShow}
+        setShowAll={setShowAll}
+      />
     </div>
   );
 }

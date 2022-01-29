@@ -2,16 +2,30 @@ import React from 'react';
 import '../style.css';
 import './Controllers.css';
 
-export default function Controllers({ tasks, delAll }) {
+export default function Controllers({ tasks, delAll, setShow, setShowAll }) {
   return (
     <footer>
       <div>
         <p>{tasks.filter((task) => !task.completed).length} items left</p>
         <div>
           <ul>
-            <li>All</li>
-            <li>Active</li>
-            <li>Completed</li>
+            <li onClick={() => setShowAll(true)}>All</li>
+            <li
+              onClick={() => {
+                setShow(false);
+                setShowAll(false);
+              }}
+            >
+              Active
+            </li>
+            <li
+              onClick={() => {
+                setShow(true);
+                setShowAll(false);
+              }}
+            >
+              Completed
+            </li>
           </ul>
         </div>
         <p onClick={() => delAll()}>Clear completed</p>
@@ -21,3 +35,4 @@ export default function Controllers({ tasks, delAll }) {
   );
 }
 // write drag and drop if you figure out how to do it
+// add setShowAll(false) to Active & completed

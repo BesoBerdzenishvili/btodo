@@ -9,19 +9,27 @@ export default function Tasks({
   editTask,
   completeTask,
   show,
-  showAll
+  showAll,
 }) {
-  const [value, setValue] = useState('');
-  const handleSubmit = (e) => {
-    console.log(value, 'Val');
+  const [value, setValue] = useState(task.text);
+  const [display, setDisplay] = useState(true);
+  const sendSubmit = (e) => {
     e.preventDefault();
     if (!value) return;
     editTask(value, index);
-    setValue('');
+    setValue(task.text);
+    setDisplay(true)
   };
   return (
     <main>
-      <article id={showAll ? 'show' : ''} className={(show && task.completed||(!show && !task.completed)) ? 'show' : 'hide'}>
+      <article
+        id={showAll ? 'show' : ''}
+        className={
+          (show && task.completed) || (!show && !task.completed)
+            ? 'show'
+            : 'hide'
+        }
+      >
         <button onClick={() => completeTask(index)}>
           <img
             src={
@@ -33,16 +41,24 @@ export default function Tasks({
             alt="check mark"
           />
         </button>
-        <p style={{ textDecoration: task.completed && 'line-through' }}>
-          {task.text}
-        </p>
-        <form onClick={handleSubmit}>
-          <input
-            type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-        </form>
+        {display ? (
+          <p
+            onDoubleClick={() => setDisplay(false)}
+            style={{ textDecoration: task.completed && 'line-through' }}
+          >
+            {task.text}
+          </p>
+        ) : (
+          <form onBlur={() => setDisplay(true)} onSubmit={sendSubmit}>
+            <input
+              autoFocus
+              type="text"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          </form>
+        )}
+
         <button onClick={() => delTask(index)}>X</button>
       </article>
     </main>

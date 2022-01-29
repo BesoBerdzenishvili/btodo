@@ -35,4 +35,3 @@ export default function Controllers({ tasks, delAll, setShow, setShowAll }) {
   );
 }
 // write drag and drop if you figure out how to do it
-// add setShowAll(false) to Active & completed

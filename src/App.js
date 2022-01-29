@@ -26,11 +26,11 @@ export default function App(props) {
   };
   // edit task
   const editTask = (value, index) => {
-    const old = [...tasks];
-    const newTasks = (old[index].text = value);
-    console.log(value, index, 'poison');
+    const newTasks = [...tasks]
+    newTasks[index].text = value
     setTasks(newTasks);
   };
+
   // delete individual task
   const delTask = (index) => {
     const newTasks = [...tasks];

@@ -35,3 +35,4 @@ export default function Controllers({ tasks, delAll, setShow, setShowAll }) {
   );
 }
 // write drag and drop if you figure out how to do it
+// for drag & drop use react draggable https://www.npmjs.com/package/react-draggable

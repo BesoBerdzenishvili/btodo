@@ -14,7 +14,7 @@ export default function App(props) {
     return saved ? JSON.parse(saved) : panels;
   });
   const [darkMode, setDarkMode] = useState(false);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(tr);
   const [showAll, setShowAll] = useState(true);
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));

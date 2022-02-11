@@ -18,7 +18,12 @@ export default function App(props) {
   const [showAll, setShowAll] = useState(true);
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+        // toggle body style
+        document.body.classList.add(darkMode ? 'dark':'light');
+        return () => {
+          document.body.classList.remove(darkMode ? 'dark':'light');
+        };
+  }, [darkMode, tasks]);
   // add new task
   const newTask = (text) => {
     const newTasks = [...tasks, { text, completed: false }];
@@ -26,8 +31,8 @@ export default function App(props) {
   };
   // edit task
   const editTask = (value, index) => {
-    const newTasks = [...tasks]
-    newTasks[index].text = value
+    const newTasks = [...tasks];
+    newTasks[index].text = value;
     setTasks(newTasks);
   };
 
@@ -52,12 +57,15 @@ export default function App(props) {
     setTasks(newTasks);
   };
   // toggle darkMode
+  const changeDarkM = () => {
+    darkMode ? setDarkMode(false) : setDarkMode(true);
+  };
   return (
     <div>
       <header>
         <h1>TODO</h1>
-        <Input newTask={newTask} />
-        <Switch />
+        <Input newTask={newTask} darkMode={darkMode} />
+        <Switch changeDarkM={changeDarkM} darkMode={darkMode} />
       </header>
       {tasks.map((task, index) => (
         <Tasks
@@ -69,6 +77,7 @@ export default function App(props) {
           completeTask={completeTask}
           show={show}
           showAll={showAll}
+          darkMode={darkMode}
         />
       ))}
       <Controllers
@@ -76,6 +85,7 @@ export default function App(props) {
         delAll={delAll}
         setShow={setShow}
         setShowAll={setShowAll}
+        darkMode={darkMode}
       />
     </div>
   );

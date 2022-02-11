@@ -10,6 +10,7 @@ export default function Tasks({
   completeTask,
   show,
   showAll,
+  darkMode,
 }) {
   const [value, setValue] = useState(task.text);
   const [display, setDisplay] = useState(true);
@@ -18,10 +19,10 @@ export default function Tasks({
     if (!value) return;
     editTask(value, index);
     setValue(task.text);
-    setDisplay(true)
+    setDisplay(true);
   };
   return (
-    <main>
+    <main className={darkMode ? 'tasksDark' : ''}>
       <article
         id={showAll ? 'show' : ''}
         className={
@@ -30,11 +31,12 @@ export default function Tasks({
             : 'hide'
         }
       >
-        <button onClick={() => completeTask(index)}>
+        <button onClick={() => completeTask(index)} className="check">
           <img
+            id="mmm"
             src={
               task.completed
-                ? 'https://www.freeiconspng.com/uploads/black-checkmark-png-10.png'
+                ? 'https://raw.githubusercontent.com/fliderman01/pics/0bc83304c50dfc2bd0fcf68eda94b3bcf85144ba/20%20-%20todoAppImages/icon-check.svg?token=ASG5THAMFEERRX4TTKVZSXLCAY3FI'
                 : 'https://i.stack.imgur.com/yVXkk.png'
             }
             width="19px"

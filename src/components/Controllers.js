@@ -2,10 +2,16 @@ import React from 'react';
 import '../style.css';
 import './Controllers.css';
 
-export default function Controllers({ tasks, delAll, setShow, setShowAll }) {
+export default function Controllers({
+  tasks,
+  delAll,
+  setShow,
+  setShowAll,
+  darkMode,
+}) {
   return (
     <footer>
-      <div>
+      <div className={darkMode ? 'InpContDark' : ''}>
         <p>{tasks.filter((task) => !task.completed).length} items left</p>
         <div>
           <ul>

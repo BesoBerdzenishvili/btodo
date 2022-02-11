@@ -10,3 +10,13 @@
 .show {
   display: flex;
 }
+
+/* check button */
+.check {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-radius: 30px;
+}
+
+/* .check > img {
+  margin: 7px;
+} */

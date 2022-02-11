@@ -1,0 +1,21 @@
+img {
+  background-color: orange; /* delete this */
+  cursor: pointer; 
+}
+
+/* TOGGLE BACKGROUND COLLORS */
+/* switch body color */
+.dark {
+  background-color: hsl(235, 21%, 11%);
+  color: hsl(234, 39%, 85%);
+}
+/* switch controllers & input color */
+.InpContDark {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+}
+/* switch task color */
+.tasksDark {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+}

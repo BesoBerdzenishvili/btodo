@@ -5,15 +5,45 @@
   margin: 0;
   padding: 0;
   font-family: 'Josefin Sans', sans-serif;
-  Font-size: 18px;
+  font-size: 18px;
 }
 
 h1 {
   font-weight: 700;
-
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+li {
+  cursor: pointer;
+}
+li:hover {
+  color: hsl(233, 75%, 57%)
+}
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* from tasks */
 article {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 332px;
+  padding: 10px 20px;
 }
+/* section {
+  border: 1px solid red;
+}
+section:first-of-type {
+  color: red;
+} */

@@ -1,0 +1,18 @@
+/* entire controllers container */
+.footCont {
+  display: flex;
+  justify-content: space-between;
+  width: 332px;
+  padding: 15px 20px;
+  border-radius: 0 0 6px 6px;
+}
+/* all, active, completed */
+.allActCom {
+  position: fixed;
+  top: 75%;
+  right: 7%;
+  width: 332px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-top: 15px;
+}

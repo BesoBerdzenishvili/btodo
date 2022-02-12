@@ -22,7 +22,7 @@ export default function Tasks({
     setDisplay(true);
   };
   return (
-    <main className={darkMode ? 'tasksDark' : ''}>
+    <div className={darkMode ? 'tasksDark big' : 'tasksLight big'}>
       <article
         id={showAll ? 'show' : ''}
         className={
@@ -61,8 +61,11 @@ export default function Tasks({
           </form>
         )}
 
-        <button onClick={() => delTask(index)}>X</button>
+        <button className="delBtn" onClick={() => delTask(index)}>
+          X
+        </button>
       </article>
-    </main>
+      <hr />
+    </div>
   );
 }

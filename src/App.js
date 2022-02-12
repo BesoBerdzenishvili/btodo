@@ -13,16 +13,16 @@ export default function App(props) {
     const saved = localStorage.getItem('tasks');
     return saved ? JSON.parse(saved) : panels;
   });
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // save in localStorage
   const [show, setShow] = useState(true);
   const [showAll, setShowAll] = useState(true);
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
-        // toggle body style
-        document.body.classList.add(darkMode ? 'dark':'light');
-        return () => {
-          document.body.classList.remove(darkMode ? 'dark':'light');
-        };
+    // toggle body style
+    document.body.classList.add(darkMode ? 'dark' : 'light');
+    return () => {
+      document.body.classList.remove(darkMode ? 'dark' : 'light');
+    };
   }, [darkMode, tasks]);
   // add new task
   const newTask = (text) => {
@@ -64,29 +64,32 @@ export default function App(props) {
     <div>
       <header>
         <h1>TODO</h1>
-        <Input newTask={newTask} darkMode={darkMode} />
         <Switch changeDarkM={changeDarkM} darkMode={darkMode} />
       </header>
-      {tasks.map((task, index) => (
-        <Tasks
-          key={index}
-          index={index}
-          task={task}
-          delTask={delTask}
-          editTask={editTask}
-          completeTask={completeTask}
-          show={show}
-          showAll={showAll}
+      <main>
+        <Input newTask={newTask} darkMode={darkMode} />
+        {tasks.map((task, index) => (
+          <Tasks
+            key={index}
+            index={index}
+            task={task}
+            delTask={delTask}
+            editTask={editTask}
+            completeTask={completeTask}
+            show={show}
+            showAll={showAll}
+            darkMode={darkMode}
+          />
+        ))}
+        <Controllers
+          tasks={tasks}
+          delAll={delAll}
+          setShow={setShow}
+          setShowAll={setShowAll}
           darkMode={darkMode}
         />
-      ))}
-      <Controllers
-        tasks={tasks}
-        delAll={delAll}
-        setShow={setShow}
-        setShowAll={setShowAll}
-        darkMode={darkMode}
-      />
+        <h4>Drag and drop to rerder list(?)</h4>
+      </main>
     </div>
   );
 }

@@ -11,9 +11,10 @@ export default function Controllers({
 }) {
   return (
     <footer>
-      <div className={darkMode ? 'InpContDark' : ''}>
+      <div className={darkMode ? 'InpContDark footCont' : 'footCont'}>
         <p>{tasks.filter((task) => !task.completed).length} items left</p>
-        <div>
+        <div className={darkMode ? 'InpContDark allActCom' : 'allActCom'}>
+        
           <ul>
             <li onClick={() => setShowAll(true)}>All</li>
             <li
@@ -36,9 +37,9 @@ export default function Controllers({
         </div>
         <p onClick={() => delAll()}>Clear completed</p>
       </div>
-      <h4>Drag and drop to rerder list(?)</h4>
     </footer>
   );
 }
 // write drag and drop if you figure out how to do it
 // for drag & drop use react draggable https://www.npmjs.com/package/react-draggable
+// footer in needless

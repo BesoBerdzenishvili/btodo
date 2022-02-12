@@ -5,6 +5,14 @@
   background-image: url('https://raw.githubusercontent.com/fliderman01/pics/main/20%20-%20todoAppImages/bg-mobile-light.jpg?token=GHSAT0AAAAAABQFVSEGWV6EBWGI7YJ24S3WYQGI3KQ');
 }
 
+input {
+  width: 332px;
+  border: none;
+  border-radius: 6px;
+  margin: 31px 0 20px 0;
+  padding: 10px 20px;
+}
+
 @media screen and (min-width: 376px) {
   .inputDark {
     background-image: url('https://raw.githubusercontent.com/fliderman01/pics/main/20%20-%20todoAppImages/bg-desktop-dark.jpg?token=GHSAT0AAAAAABQFVSEHZBUSIHUUYWUTBELEYQGI54Q');

@@ -20,3 +20,21 @@
 /* .check > img {
   margin: 7px;
 } */
+
+hr {
+  border: .4px solid grey;
+}
+.delBtn {
+  background: transparent;
+  border: none;
+  color: hsl(234, 39%, 85%);
+  cursor: pointer;
+}
+.delBtn:hover {
+  color: red;
+}
+
+@media screen and (min-width: 376px) {
+}
+
+/* we don't need .big */

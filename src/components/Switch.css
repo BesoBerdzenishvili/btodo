@@ -1,15 +1,20 @@
 img {
-  background-color: orange; /* delete this */
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 /* TOGGLE BACKGROUND COLLORS */
-/* switch body color */
-.dark {
+/* switch body */
+.inputDark {
+  background-image: url('https://images2.imgbox.com/f9/ad/3Im8M4HZ_o.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
   background-color: hsl(235, 21%, 11%);
   color: hsl(234, 39%, 85%);
 }
-.light {
+.inputLight {
+  background-image: url('https://images2.imgbox.com/02/55/DItit5E0_o.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
   background-color: hsl(236, 33%, 92%);
 }
 /* switch task color */
@@ -25,4 +30,14 @@ img {
 .InpContDark {
   background-color: hsl(235, 24%, 19%);
   color: hsl(234, 39%, 85%);
+}
+
+
+@media screen and (min-width: 376px) {
+  .inputDark {
+    background-image: url('https://images2.imgbox.com/b2/5f/cnxXx0u0_o.jpg');
+  }
+  .inputLight {
+    background-image: url('https://images2.imgbox.com/74/ae/FQAmy8Q4_o.jpg');
+  }
 }

@@ -19,9 +19,9 @@ export default function App(props) {
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     // toggle body style
-    document.body.classList.add(darkMode ? 'dark' : 'light');
+    document.body.classList.add(darkMode ? 'inputDark' : 'inputLight');
     return () => {
-      document.body.classList.remove(darkMode ? 'dark' : 'light');
+      document.body.classList.remove(darkMode ? 'inputDark' : 'inputLight');
     };
   }, [darkMode, tasks]);
   // add new task
@@ -63,7 +63,7 @@ export default function App(props) {
   return (
     <div>
       <header>
-        <h1>TODO</h1>
+        <h1>T O D O</h1>
         <Switch changeDarkM={changeDarkM} darkMode={darkMode} />
       </header>
       <main>

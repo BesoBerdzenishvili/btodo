@@ -15,6 +15,16 @@
 .check {
   background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border-radius: 30px;
+  border: none;
+  padding: 0 2px;
+  margin-right: 1em;
+}
+.check > img {
+  margin: 2px;
+}
+
+.taskText {
+  /* text-align: start; */
 }
 
 /* .check > img {

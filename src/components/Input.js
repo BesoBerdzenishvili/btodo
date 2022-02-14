@@ -12,7 +12,7 @@ export default function Input({ newTask, darkMode }) {
     setValue('');
   };
   return (
-    <div className={darkMode ? 'inputDark' : 'inputLight'}>
+    <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -36,7 +36,7 @@ export default function Tasks({
             id="mmm"
             src={
               task.completed
-                ? 'https://raw.githubusercontent.com/fliderman01/pics/0bc83304c50dfc2bd0fcf68eda94b3bcf85144ba/20%20-%20todoAppImages/icon-check.svg?token=ASG5THAMFEERRX4TTKVZSXLCAY3FI'
+                ? 'https://upload.wikimedia.org/wikipedia/commons/2/27/White_check.svg'
                 : 'https://i.stack.imgur.com/yVXkk.png'
             }
             width="19px"
@@ -45,6 +45,7 @@ export default function Tasks({
         </button>
         {display ? (
           <p
+            className="taskText"
             onDoubleClick={() => setDisplay(false)}
             style={{ textDecoration: task.completed && 'line-through' }}
           >

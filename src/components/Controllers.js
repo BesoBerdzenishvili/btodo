@@ -14,7 +14,6 @@ export default function Controllers({
       <div className={darkMode ? 'InpContDark footCont' : 'footCont'}>
         <p>{tasks.filter((task) => !task.completed).length} items left</p>
         <div className={darkMode ? 'InpContDark allActCom' : 'allActCom'}>
-        
           <ul>
             <li onClick={() => setShowAll(true)}>All</li>
             <li

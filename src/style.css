@@ -8,7 +8,7 @@
   font-size: 18px;
 }
 body {
-  padding: 2.9em 1em;
+  padding: 2.9em 1em 7em 1em;
 }
 
 h1 {
@@ -24,7 +24,7 @@ li {
   cursor: pointer;
 }
 li:hover {
-  color: hsl(233, 75%, 57%)
+  color: hsl(233, 75%, 57%);
 }
 header {
   display: flex;

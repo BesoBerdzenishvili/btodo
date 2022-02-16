@@ -9,10 +9,10 @@
 /* all, active, completed */
 .allActCom {
   position: fixed;
-  top: 75%;
-  right: 7%;
+  top: 87%;
+  right: 4%;
   width: 332px;
   padding: 15px 20px;
   border-radius: 6px;
-  margin-top: 15px;
+  margin-top: 5px;
 }

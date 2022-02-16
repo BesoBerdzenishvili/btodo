@@ -68,19 +68,21 @@ export default function App(props) {
       </header>
       <main>
         <Input newTask={newTask} darkMode={darkMode} />
-        {tasks.map((task, index) => (
-          <Tasks
-            key={index}
-            index={index}
-            task={task}
-            delTask={delTask}
-            editTask={editTask}
-            completeTask={completeTask}
-            show={show}
-            showAll={showAll}
-            darkMode={darkMode}
-          />
-        ))}
+        <div className="cont">
+          {tasks.map((task, index) => (
+            <Tasks
+              key={index}
+              index={index}
+              task={task}
+              delTask={delTask}
+              editTask={editTask}
+              completeTask={completeTask}
+              show={show}
+              showAll={showAll}
+              darkMode={darkMode}
+            />
+          ))}
+        </div>
         <Controllers
           tasks={tasks}
           delAll={delAll}

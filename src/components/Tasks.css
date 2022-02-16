@@ -13,18 +13,33 @@
 
 /* check button */
 .check {
-  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border-radius: 30px;
   border: none;
   padding: 0 2px;
   margin-right: 1em;
 }
+/* toggle check */
+.tog {
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+.noTog {
+  /* background-color: hsl(235, 24%, 19%); */
+  opacity: 0.1;
+  border: 2px solid black;
+}
 .check > img {
   margin: 2px;
 }
 
-.taskText {
-  /* text-align: start; */
+/* edit task input field */
+.editTask {
+  opacity: 0.3;
+  border: 2px solid black;
+  width: 94%;
+  margin: 0 0;
+}
+.darkText {
+  color: hsl(235, 24%, 19%);
 }
 
 /* .check > img {
@@ -32,7 +47,7 @@
 } */
 
 hr {
-  border: .4px solid grey;
+  border: 0.4px solid grey;
 }
 .delBtn {
   background: transparent;

@@ -31,7 +31,10 @@ export default function Tasks({
             : 'hide'
         }
       >
-        <button onClick={() => completeTask(index)} className="check">
+        <button
+          onClick={() => completeTask(index)}
+          className={task.completed ? 'check tog' : 'check noTog'}
+        >
           <img
             id="mmm"
             src={
@@ -45,7 +48,7 @@ export default function Tasks({
         </button>
         {display ? (
           <p
-            className="taskText"
+            className={darkMode ? '' : 'darkText'}
             onDoubleClick={() => setDisplay(false)}
             style={{ textDecoration: task.completed && 'line-through' }}
           >
@@ -54,6 +57,7 @@ export default function Tasks({
         ) : (
           <form onBlur={() => setDisplay(true)} onSubmit={sendSubmit}>
             <input
+              className="editTask"
               autoFocus
               type="text"
               value={value}
